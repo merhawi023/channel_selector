@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<block>
+  <name>channel_selector</name>
+  <key>channelselector_channel_selector</key>
+  <category>[channelselector]</category>
+  <import>import channelselector</import>
+  <make>channelselector.channel_selector($band_size, $start_byte, $end_byte)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>band size</name>
+    <key>band_size</key>
+    <type>int</type>
+  </param>
+   <param>
+    <name>start byte</name>
+    <key>start_byte</key>
+    <type>int</type>
+  </param>
+   <param>
+    <name>end byte</name>
+    <key>end_byte</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>
